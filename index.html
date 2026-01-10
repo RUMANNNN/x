@@ -17,7 +17,7 @@ body{
 }
 section{padding:120px 80px}
 
-/* ===== TOP ===== */
+/* ===== TOP (DESKTOP) ===== */
 .title{
   position:fixed;
   top:22px;
@@ -47,7 +47,7 @@ section{padding:120px 80px}
 .about{
   min-height:100vh;
   background:#0a0a0a;
-  padding-top:220px; /* HEADER SAFE SPACE */
+  padding-top:220px;
 }
 .about p{
   max-width:720px;
@@ -68,13 +68,11 @@ section{padding:120px 80px}
   font-size:clamp(4rem,10vw,9rem);
   margin:140px 0 60px;
 }
-
 .work-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:30px;
 }
-
 .work-card{
   position:relative;
   overflow:hidden;
@@ -90,7 +88,6 @@ section{padding:120px 80px}
   transition:.7s cubic-bezier(.2,.8,.2,1);
 }
 .work-card:hover img{transform:scale(1.08)}
-
 .work-info{
   position:absolute;
   bottom:0;
@@ -99,7 +96,7 @@ section{padding:120px 80px}
   padding:24px;
   background:linear-gradient(to top,rgba(0,0,0,.9),transparent);
 }
-.work-info span{opacity:.6;font-size:.95rem}
+.work-info span{opacity:.6}
 .work-arrow{
   position:absolute;
   right:24px;
@@ -113,7 +110,7 @@ section{padding:120px 80px}
   justify-content:center;
 }
 
-/* ===== WHY WORK (LAPTOP STYLE EVERYWHERE) ===== */
+/* ===== WHY WORK (DESKTOP) ===== */
 .why{
   display:grid;
   grid-template-columns:1fr 2fr;
@@ -144,43 +141,55 @@ section{padding:120px 80px}
   border-bottom:1px solid rgba(255,255,255,.4);
 }
 
-/* ===== MOBILE / iPAD PREMIUM FIX ===== */
-@media(max-width:900px){
+/* ===== MOBILE / iPAD FINAL FIX ===== */
+@media(max-width:768px){
 
-  section{padding:90px 24px}
+  section{padding:90px 22px}
 
+  /* Header fix */
   .title{
-    font-size:2.3rem;
-    left:20px;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:2.2rem;
+    top:18px;
+    white-space:nowrap;
   }
 
   .nav-links{
-    right:20px;
-    gap:18px;
+    top:64px;
+    right:50%;
+    transform:translateX(50%);
+    gap:20px;
   }
 
-  /* Our Work horizontal */
+  .about{
+    padding-top:180px;
+  }
+
+  /* Our work horizontal */
   .work-grid{
     display:flex;
     gap:20px;
     overflow-x:auto;
     scroll-snap-type:x mandatory;
-    padding-bottom:20px;
   }
   .work-card{
-    min-width:78vw;
+    min-width:80vw;
     scroll-snap-align:start;
   }
   .work-grid::-webkit-scrollbar{display:none}
 
-  /* WHY = laptop style scroll */
+  /* WHY WORK – CLEAN STACK */
   .why{
-    overflow-x:auto;
-    display:flex;
-    gap:60px;
+    grid-template-columns:1fr;
+    gap:40px;
   }
-  .why > *{
-    min-width:90vw;
+  .why-grid{
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+  .why-intro{
+    font-size:1.3rem;
   }
 }
 </style>
@@ -252,7 +261,6 @@ section{padding:120px 80px}
 
 <section class="contact" id="contact">
   <h1>Contact us</h1>
-  <p>Let’s Build Bold Together</p>
   <a href="mailto:7xxazzz@gmail.com">7xxazzz@gmail.com</a>
 </section>
 
