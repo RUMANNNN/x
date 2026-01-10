@@ -72,43 +72,51 @@ section{padding:120px 80px}
   gap:30px;
 }
 
-/* 🔥 FIXED CARDS */
+/* Cards */
 .work-card{
   position:relative;
   overflow:hidden;
   text-decoration:none;
   color:#fff;
   aspect-ratio:4 / 5;
+  border-radius:14px;
 }
 .work-card img{
   width:100%;
   height:100%;
   object-fit:cover;
   object-position:center;
-  transition:.6s;
+  transition:.7s cubic-bezier(.2,.8,.2,1);
 }
-.work-card:hover img{transform:scale(1.08)}
+.work-card:hover img{
+  transform:scale(1.08);
+}
 
 .work-info{
   position:absolute;
   bottom:0;
   left:0;
   right:0;
-  padding:20px;
-  background:linear-gradient(to top,rgba(0,0,0,.85),transparent);
+  padding:24px;
+  background:linear-gradient(to top,rgba(0,0,0,.9),transparent);
 }
-.work-info span{opacity:.6;font-size:.9rem}
+.work-info h3{margin:0}
+.work-info span{
+  opacity:.6;
+  font-size:.95rem;
+}
 .work-arrow{
   position:absolute;
-  right:20px;
-  bottom:20px;
-  width:36px;
-  height:36px;
+  right:24px;
+  bottom:24px;
+  width:44px;
+  height:44px;
   border-radius:50%;
   background:rgba(255,255,255,.15);
   display:flex;
   align-items:center;
   justify-content:center;
+  font-size:18px;
 }
 
 /* ===== WHY WORK ===== */
@@ -142,23 +150,27 @@ section{padding:120px 80px}
   border-bottom:1px solid rgba(255,255,255,.4);
 }
 
-/* ===== SAME DESIGN ON ALL DEVICES ===== */
+/* ===== PREMIUM MOBILE + iPAD ===== */
 @media(max-width:1024px){
 
-  section{padding:100px 30px}
+  section{
+    padding:90px 24px;
+  }
 
-  /* Our Work stays laptop-style (horizontal scroll) */
+  /* Premium horizontal gallery */
   .work-grid{
     display:flex;
-    gap:20px;
+    gap:22px;
     overflow-x:auto;
+    padding:10px 4px 30px;
     scroll-snap-type:x mandatory;
-    padding-bottom:10px;
+    -webkit-overflow-scrolling:touch;
   }
 
   .work-card{
-    min-width:260px;
-    scroll-snap-align:start;
+    min-width:78vw;
+    max-width:78vw;
+    scroll-snap-align:center;
   }
 
   .work-grid::-webkit-scrollbar{
@@ -167,11 +179,16 @@ section{padding:120px 80px}
 
   .why{
     grid-template-columns:1fr;
-    gap:60px;
+    gap:50px;
+  }
+
+  .why-intro{
+    font-size:1.4rem;
   }
 
   .why-grid{
     grid-template-columns:1fr;
+    gap:32px;
   }
 }
 </style>
@@ -215,8 +232,7 @@ section{padding:120px 80px}
     </a>
 
     <a href="https://carsdaily.in/" target="_blank" class="work-card">
-<img src="https://raw.githubusercontent.com/RUMANNNN/x/main/Screenshot%202026-01-09%20222556.png">
-
+      <img src="https://raw.githubusercontent.com/RUMANNNN/x/main/Screenshot%202026-01-09%20222556.png">
       <div class="work-info">
         <h3>Cars Daily</h3>
         <span>Logo & Branding</span>
@@ -288,7 +304,3 @@ window.addEventListener("scroll",()=>{
 
 </body>
 </html>
-
-
-
-
