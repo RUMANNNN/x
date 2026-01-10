@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 
 <style>
+/* ===== GLOBAL ===== */
 body{
   margin:0;
   background:#000;
@@ -16,6 +17,7 @@ body{
 }
 section{padding:120px 80px}
 
+/* ===== TOP ===== */
 .title{
   position:fixed;
   top:25px;
@@ -39,6 +41,7 @@ section{padding:120px 80px}
 }
 .nav-links a:hover{opacity:1}
 
+/* ===== ABOUT ===== */
 .about{
   min-height:100vh;
   background:#0a0a0a;
@@ -57,28 +60,35 @@ section{padding:120px 80px}
   -webkit-background-clip:text;
 }
 
+/* ===== OUR WORK ===== */
 .work-title{
   font-size:clamp(4rem,10vw,9rem);
   margin:140px 0 60px;
 }
+
 .work-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:30px;
 }
+
+/* 🔥 FIXED CARDS */
 .work-card{
   position:relative;
   overflow:hidden;
   text-decoration:none;
   color:#fff;
+  aspect-ratio:4 / 5;
 }
 .work-card img{
   width:100%;
   height:100%;
   object-fit:cover;
+  object-position:center;
   transition:.6s;
 }
 .work-card:hover img{transform:scale(1.08)}
+
 .work-info{
   position:absolute;
   bottom:0;
@@ -101,6 +111,7 @@ section{padding:120px 80px}
   justify-content:center;
 }
 
+/* ===== WHY WORK ===== */
 .why{
   display:grid;
   grid-template-columns:1fr 2fr;
@@ -119,6 +130,7 @@ section{padding:120px 80px}
 }
 .why-box p{opacity:.7}
 
+/* ===== CONTACT ===== */
 .contact h1{
   font-size:clamp(4rem,10vw,9rem);
   margin-bottom:60px;
@@ -130,9 +142,37 @@ section{padding:120px 80px}
   border-bottom:1px solid rgba(255,255,255,.4);
 }
 
-@media(max-width:900px){
+/* ===== SAME DESIGN ON ALL DEVICES ===== */
+@media(max-width:1024px){
+
   section{padding:100px 30px}
-  .work-grid,.why,.why-grid{grid-template-columns:1fr}
+
+  /* Our Work stays laptop-style (horizontal scroll) */
+  .work-grid{
+    display:flex;
+    gap:20px;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    padding-bottom:10px;
+  }
+
+  .work-card{
+    min-width:260px;
+    scroll-snap-align:start;
+  }
+
+  .work-grid::-webkit-scrollbar{
+    display:none;
+  }
+
+  .why{
+    grid-template-columns:1fr;
+    gap:60px;
+  }
+
+  .why-grid{
+    grid-template-columns:1fr;
+  }
 }
 </style>
 </head>
@@ -145,6 +185,7 @@ section{padding:120px 80px}
   <a href="#contact">Contact us</a>
 </div>
 
+<!-- ABOUT -->
 <section class="about">
   <p class="shine">
     At 7xaaz, we turn ideas into powerful digital experiences. We create
@@ -159,13 +200,13 @@ section{padding:120px 80px}
     We don’t just build websites — we build your digital identity.
   </p>
 
+  <!-- OUR WORK -->
   <h1 class="work-title" id="work">Our Work</h1>
 
   <div class="work-grid">
 
     <a href="https://www.bitemore.us/" target="_blank" class="work-card">
- <img src="https://raw.githubusercontent.com/RUMANNNN/x/main/Screenshot%202026-01-09%20222702.png">
-     
+      <img src="https://raw.githubusercontent.com/RUMANNNN/x/main/Screenshot%202026-01-09%20222702.png">
       <div class="work-info">
         <h3>Bite More</h3>
         <span>Logo & Branding</span>
@@ -174,7 +215,7 @@ section{padding:120px 80px}
     </a>
 
     <a href="https://carsdaily.in/" target="_blank" class="work-card">
-      <img src="https://github.com/RUMANNNN/x/blob/main/Screenshot%202026-01-09%20222556.png">
+      <img src="https://raw.githubusercontent.com/RUMANNNN/x/main/Screenshot%202026-01-09%20222556.png">
       <div class="work-info">
         <h3>Cars Daily</h3>
         <span>Logo & Branding</span>
@@ -183,7 +224,7 @@ section{padding:120px 80px}
     </a>
 
     <a href="https://www.delightfoods.com" target="_blank" class="work-card">
-       <img src="https://raw.githubusercontent.com/RUMANNNN/x/main/images.png">
+      <img src="https://raw.githubusercontent.com/RUMANNNN/x/main/images.png">
       <div class="work-info">
         <h3>Delight Foods</h3>
         <span>Logo & Branding</span>
@@ -194,6 +235,7 @@ section{padding:120px 80px}
   </div>
 </section>
 
+<!-- WHY WORK -->
 <section>
   <div class="why">
     <h2>Why work with us</h2>
@@ -224,6 +266,7 @@ section{padding:120px 80px}
   </div>
 </section>
 
+<!-- CONTACT -->
 <section class="contact" id="contact">
   <h1>Contact us</h1>
   <p>Let’s Build Bold Together</p>
@@ -244,7 +287,3 @@ window.addEventListener("scroll",()=>{
 
 </body>
 </html>
-
-
-
-
