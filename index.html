@@ -26,17 +26,19 @@ section{padding:120px 80px}
   font-size:3rem;
   z-index:1000;
 }
+
 .nav-links{
   position:fixed;
   top:35px;
   right:40px;
   display:flex;
   gap:30px;
-  z-index:1000;
+  z-index:2000;
 }
 .nav-links a{
   color:#fff;
   text-decoration:none;
+  font-size:0.95rem;
   opacity:.7;
 }
 .nav-links a:hover{opacity:1}
@@ -72,7 +74,6 @@ section{padding:120px 80px}
   gap:30px;
 }
 
-/* Cards */
 .work-card{
   position:relative;
   overflow:hidden;
@@ -88,9 +89,7 @@ section{padding:120px 80px}
   object-position:center;
   transition:.7s cubic-bezier(.2,.8,.2,1);
 }
-.work-card:hover img{
-  transform:scale(1.08);
-}
+.work-card:hover img{transform:scale(1.08)}
 
 .work-info{
   position:absolute;
@@ -100,11 +99,8 @@ section{padding:120px 80px}
   padding:24px;
   background:linear-gradient(to top,rgba(0,0,0,.9),transparent);
 }
-.work-info h3{margin:0}
-.work-info span{
-  opacity:.6;
-  font-size:.95rem;
-}
+.work-info span{opacity:.6;font-size:.95rem}
+
 .work-arrow{
   position:absolute;
   right:24px;
@@ -116,13 +112,12 @@ section{padding:120px 80px}
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:18px;
 }
 
 /* ===== WHY WORK ===== */
 .why{
   display:grid;
-  grid-template-columns:1fr 2fr;
+  grid-template-columns:1fr 2fr; /* ALWAYS SAME */
   gap:80px;
 }
 .why h2{font-size:3rem}
@@ -150,45 +145,30 @@ section{padding:120px 80px}
   border-bottom:1px solid rgba(255,255,255,.4);
 }
 
-/* ===== PREMIUM MOBILE + iPAD ===== */
+/* ===== MOBILE + iPAD (PREMIUM, NO BREAK) ===== */
 @media(max-width:1024px){
 
   section{
     padding:90px 24px;
   }
 
-  /* Premium horizontal gallery */
+  /* Our Work → premium horizontal, rest same */
   .work-grid{
     display:flex;
     gap:22px;
     overflow-x:auto;
-    padding:10px 4px 30px;
+    padding-bottom:30px;
     scroll-snap-type:x mandatory;
     -webkit-overflow-scrolling:touch;
   }
 
   .work-card{
     min-width:78vw;
-    max-width:78vw;
     scroll-snap-align:center;
   }
 
   .work-grid::-webkit-scrollbar{
     display:none;
-  }
-
-  .why{
-    grid-template-columns:1fr;
-    gap:50px;
-  }
-
-  .why-intro{
-    font-size:1.4rem;
-  }
-
-  .why-grid{
-    grid-template-columns:1fr;
-    gap:32px;
   }
 }
 </style>
@@ -197,6 +177,7 @@ section{padding:120px 80px}
 <body>
 
 <div class="title">Welcome 7xaaz</div>
+
 <div class="nav-links">
   <a href="#work">Our Work</a>
   <a href="#contact">Contact us</a>
@@ -217,7 +198,6 @@ section{padding:120px 80px}
     We don’t just build websites — we build your digital identity.
   </p>
 
-  <!-- OUR WORK -->
   <h1 class="work-title" id="work">Our Work</h1>
 
   <div class="work-grid">
@@ -256,11 +236,13 @@ section{padding:120px 80px}
 <section>
   <div class="why">
     <h2>Why work with us</h2>
+
     <div>
       <div class="why-intro">
         We’re a passionate team that loves big ideas, open conversations
         and building brands that actually mean something.
       </div>
+
       <div class="why-grid">
         <div class="why-box">
           <h3>You’ll own your work</h3>
