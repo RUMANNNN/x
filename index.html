@@ -5,7 +5,11 @@
 <title>7xaaz</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+<!-- AOS -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
 <style>
 /* ===== GLOBAL ===== */
@@ -17,7 +21,28 @@ body{
 }
 section{padding:120px 80px}
 
-/* ===== TOP (DESKTOP) ===== */
+/* ===== LOADER ===== */
+#loader{
+  position:fixed;
+  inset:0;
+  background:#000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+#loader span{
+  font-family:'Great Vibes',cursive;
+  font-size:4rem;
+  animation:pulse 1.2s ease-in-out infinite;
+}
+@keyframes pulse{
+  0%{opacity:.3}
+  50%{opacity:1}
+  100%{opacity:.3}
+}
+
+/* ===== HEADER ===== */
 .title{
   position:fixed;
   top:22px;
@@ -29,17 +54,22 @@ section{padding:120px 80px}
 
 .nav-links{
   position:fixed;
-  top:32px;
-  right:40px;
+  top:28px;
+  right:32px;
   display:flex;
   gap:28px;
   z-index:2000;
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  background:rgba(0,0,0,.35);
+  padding:10px 18px;
+  border-radius:30px;
 }
 .nav-links a{
   color:#fff;
   text-decoration:none;
   font-size:.95rem;
-  opacity:.7;
+  opacity:.75;
 }
 .nav-links a:hover{opacity:1}
 
@@ -110,7 +140,7 @@ section{padding:120px 80px}
   justify-content:center;
 }
 
-/* ===== WHY WORK (DESKTOP) ===== */
+/* ===== WHY WORK ===== */
 .why{
   display:grid;
   grid-template-columns:1fr 2fr;
@@ -132,7 +162,7 @@ section{padding:120px 80px}
 /* ===== CONTACT ===== */
 .contact h1{
   font-size:clamp(4rem,10vw,9rem);
-  margin-bottom:60px;
+  margin-bottom:40px;
 }
 .contact p{opacity:.7}
 .contact a{
@@ -141,12 +171,10 @@ section{padding:120px 80px}
   border-bottom:1px solid rgba(255,255,255,.4);
 }
 
-/* ===== MOBILE / iPAD FINAL FIX ===== */
+/* ===== MOBILE FIX ===== */
 @media(max-width:768px){
-
   section{padding:90px 22px}
 
-  /* Header fix */
   .title{
     left:50%;
     transform:translateX(-50%);
@@ -162,11 +190,8 @@ section{padding:120px 80px}
     gap:20px;
   }
 
-  .about{
-    padding-top:180px;
-  }
+  .about{padding-top:180px}
 
-  /* Our work horizontal */
   .work-grid{
     display:flex;
     gap:20px;
@@ -179,7 +204,6 @@ section{padding:120px 80px}
   }
   .work-grid::-webkit-scrollbar{display:none}
 
-  /* WHY WORK – CLEAN STACK */
   .why{
     grid-template-columns:1fr;
     gap:40px;
@@ -188,52 +212,54 @@ section{padding:120px 80px}
     grid-template-columns:1fr;
     gap:28px;
   }
-  .why-intro{
-    font-size:1.3rem;
-  }
+  .why-intro{font-size:1.3rem}
 }
 </style>
 </head>
 
 <body>
 
-<div class="title">Welcome 7xaaz</div>
+<!-- LOADER -->
+<div id="loader"><span>7xaaz</span></div>
 
+<!-- HEADER -->
+<div class="title">Welcome 7xaaz</div>
 <div class="nav-links">
   <a href="#work">Our Work</a>
   <a href="#contact">Contact us</a>
 </div>
 
+<!-- ABOUT -->
 <section class="about">
-  <p class="shine">
-    At 7xaaz, we turn ideas into powerful digital experiences. We create
-    modern, high-quality websites for businesses, brands, and individuals
-    who want to stand out online.
+  <p class="shine" data-aos="fade-up">
+    At 7xaaz, we turn ideas into powerful digital experiences.
+    We create modern, high-quality websites for businesses, brands,
+    and individuals who want to stand out online.
   </p>
-  <p class="shine">
-    From simple landing pages to full business websites, we focus on clean
-    design, smooth performance, and premium quality.
+  <p class="shine" data-aos="fade-up" data-aos-delay="100">
+    From simple landing pages to full business websites,
+    we focus on clean design, smooth performance, and premium quality.
   </p>
-  <p class="shine highlight">
+  <p class="shine highlight" data-aos="fade-up" data-aos-delay="200">
     We don’t just build websites — we build your digital identity.
   </p>
 
-  <h1 class="work-title" id="work">Our Work</h1>
+  <h1 class="work-title" id="work" data-aos="fade-up">Our Work</h1>
 
   <div class="work-grid">
-    <a href="https://www.bitemore.us/" target="_blank" class="work-card">
+    <a href="https://www.bitemore.us/" target="_blank" class="work-card" data-aos="zoom-in">
       <img src="https://raw.githubusercontent.com/RUMANNNN/x/main/Screenshot%202026-01-09%20222702.png">
       <div class="work-info"><h3>Bite More</h3><span>Logo & Branding</span></div>
       <div class="work-arrow">↗</div>
     </a>
 
-    <a href="https://carsdaily.in/" target="_blank" class="work-card">
+    <a href="https://carsdaily.in/" target="_blank" class="work-card" data-aos="zoom-in" data-aos-delay="100">
       <img src="https://raw.githubusercontent.com/RUMANNNN/x/main/Screenshot%202026-01-09%20222556.png">
       <div class="work-info"><h3>Cars Daily</h3><span>Logo & Branding</span></div>
       <div class="work-arrow">→</div>
     </a>
 
-    <a href="https://www.delightfoods.com" target="_blank" class="work-card">
+    <a href="https://www.delightfoods.com" target="_blank" class="work-card" data-aos="zoom-in" data-aos-delay="200">
       <img src="https://raw.githubusercontent.com/RUMANNNN/x/main/images.png">
       <div class="work-info"><h3>Delight Foods</h3><span>Logo & Branding</span></div>
       <div class="work-arrow">↗</div>
@@ -241,36 +267,50 @@ section{padding:120px 80px}
   </div>
 </section>
 
+<!-- WHY -->
 <section>
   <div class="why">
-    <h2>Why work with us</h2>
+    <h2 data-aos="fade-up">Why work with us</h2>
     <div>
-      <div class="why-intro">
+      <div class="why-intro" data-aos="fade-up">
         We’re a passionate team that loves big ideas, open conversations
         and building brands that actually mean something.
       </div>
       <div class="why-grid">
-        <div class="why-box"><h3>You’ll own your work</h3><p>Real responsibility.</p></div>
-        <div class="why-box"><h3>You’ll keep growing</h3><p>Mentorship & learning.</p></div>
-        <div class="why-box"><h3>You’ll feel supported</h3><p>Honest feedback.</p></div>
-        <div class="why-box"><h3>You’ll have balance</h3><p>Life comes first.</p></div>
+        <div class="why-box" data-aos="fade-up">Real responsibility.</div>
+        <div class="why-box" data-aos="fade-up">Mentorship & growth.</div>
+        <div class="why-box" data-aos="fade-up">Honest feedback.</div>
+        <div class="why-box" data-aos="fade-up">Life-first balance.</div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- CONTACT -->
 <section class="contact" id="contact">
-  <h1>Contact us</h1>
-   <p>Let’s Build Bold Together</p>
-  <p>
+  <h1 data-aos="fade-up">Contact us</h1>
+   <p data-aos="fade-up">Let’s Build Bold Together</p>
+   <p data-aos="fade-up">
     Whether you're ready to start a project or just exploring,
     we'd love to hear from you.
   </p>
 
-  <a href="mailto:7xxazzz@gmail.com">7xxazzz@gmail.com</a>
+  <a href="mailto:7xxazzz@gmail.com" data-aos="fade-up">7xxazzz@gmail.com</a>
 </section>
 
+<!-- SCRIPTS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
+AOS.init({duration:900,once:true,easing:'ease-out-cubic'});
+
+window.addEventListener("load",()=>{
+  const l=document.getElementById("loader");
+  setTimeout(()=>{
+    l.style.opacity="0";
+    setTimeout(()=>l.remove(),600);
+  },1200);
+});
+
 window.addEventListener("scroll",()=>{
   document.querySelectorAll(".shine").forEach(t=>{
     t.style.backgroundPosition=window.scrollY+"px";
@@ -280,4 +320,3 @@ window.addEventListener("scroll",()=>{
 
 </body>
 </html>
-
